@@ -1,23 +1,53 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import Clock from './components/Clock';
 
 function App() {
+const [timerDays, setTimerDays] = useState();
+const [timerHours, setTimerHours] = useState();
+const [timerMinutes, setTimerMinutes] = useState();
+const [timerSeconds, setTimerSeconds] = useState();
+
+let interval;
+
+const startTimer = () => {
+  const countDownDate = new Date("2021-12-02 16:00:00").getTime();
+
+  interval=setInterval(() => {
+    const now = new Date().getTime();
+
+    const distance = countDownDate - now;
+
+    const days= Math.floor(distance/(24 * 60 * 60 * 1000));
+    const hours= Math.floor(
+      (distance%(24 * 60 * 60 * 1000))/(1000 * 60 * 60)
+    );
+    const minutes= Math.floor(
+      (distance % (60 * 60 * 1000)) / (1000 * 60)
+    );
+    const seconds= Math.floor((distance % (60 * 1000)) / 1000
+    );
+
+    if (distance<0) {
+      // Stop timer
+      clearInterval(interval.current);
+    } else {
+      // Update timer
+      setTimerDays(days);
+      setTimerHours(hours);
+      setTimerMinutes(minutes);
+      setTimerSeconds(seconds);
+    }
+  });
+};
+
+useEffect(() => {
+  startTimer();
+})
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Clock timerDays={timerDays} timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} />
     </div>
   );
 }
