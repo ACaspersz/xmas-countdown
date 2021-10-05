@@ -7,46 +7,46 @@ const Cursor = () => {
   const [click, setClick] = useState(false);
   
   useEffect(() => {
+    const addEventListeners = () => {
+      document.addEventListener('mousemove', mMove);
+      document.addEventListener('mouseenter', mEnter);
+      document.addEventListener('mouseleave', mLeave);
+      document.addEventListener('mousedown', mDown);
+      document.addEventListener('mouseup', mUp);
+    };
+
+    const removeEventListeners = () => {
+      document.removeEventListener('mousemove', mMove);
+      document.removeEventListener('mouseenter', mEnter);
+      document.removeEventListener('mouseleave', mLeave);
+      document.removeEventListener('mousedown', mDown);
+      document.removeEventListener('mouseup', mUp);
+
+    };
+
+    const mDown = () => {
+      setClick(true);
+    };
+
+    const mUp = () => {
+      setClick(false);
+    };
+    
+    const mMove = (el) => {
+      setPosition({ x: el.clientX, y: el.clientY });
+    };
+
+    const mLeave = () => {
+      setHidden(true);
+    };
+
+    const mEnter = () => {
+      setHidden(false);
+    };
+
     addEventListeners();
     return () => removeEventListeners();
   }, []);
-
-  const addEventListeners = () => {
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseenter", onMouseEnter);
-    document.addEventListener("mouseleave", onMouseLeave);
-    document.addEventListener("mousedown", onMouseDown);
-    document.addEventListener("mouseup", onMouseUp);
-  }
-
-  const removeEventListeners = () => {
-    document.removeEventListener("mousemove", onMouseMove);
-    document.removeEventListener("mouseenter", onMouseEnter);
-    document.removeEventListener("mouseleave", onMouseLeave);
-    document.removeEventListener("mousedown", onMouseDown);
-    document.removeEventListener("mouseup", onMouseUp);
-  };
-
-  const onMouseLeave = () => {
-    setHidden(true);
-   };
-    
-  const onMouseEnter = () => {
-    setHidden(false);
-  };
-
-  const onMouseDown = () => {
-    setClick(true);
-  };
-
-  const onMouseUp = () => {
-    setClick(false);
-  };
-  
-  const onMouseMove = (e) => {
-    setPosition({x: e.clientX, y: e.clientY});
-  };    
-   
 
 
   return (

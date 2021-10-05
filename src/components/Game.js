@@ -1,4 +1,6 @@
 import React from 'react'
+import useSound from 'use-sound';
+import splat from '../assets/splat.wav';
 
 const Game = () => {
   const holes = document.querySelectorAll('.hole');
@@ -7,6 +9,7 @@ const Game = () => {
   let lastHole;
   let timeUp = false;
   let score = 0;
+  const [play] = useSound(splat);
 
   function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -55,22 +58,22 @@ const Game = () => {
 
   <div class="game">
     <div class="hole hole1">
-      <div class="mole"></div>
+      <div class="mole" onClick={play}></div>
     </div>
     <div class="hole hole2">
-      <div class="mole"></div>
+      <div class="mole" onClick={play}></div>
     </div>
     <div class="hole hole3">
-      <div class="mole"></div>
+      <div class="mole" onClick={play}></div>
     </div>
     <div class="hole hole4">
-      <div class="mole"></div>
+      <div class="mole" onClick={play}></div>
     </div>
     <div class="hole hole5">
-      <div class="mole"></div>
+      <div class="mole" onClick={play}></div>
     </div>
     <div class="hole hole6">
-      <div class="mole"></div>
+      <div class="mole" onClick={play}></div>
     </div>
   </div>
     </div>
