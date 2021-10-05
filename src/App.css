@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {
@@ -19,14 +20,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(270deg, #051817, #0e3839);
+  /* background: linear-gradient(270deg, #051817, #0e3839); */
   height: 180px;
-  width: 360px;
-  color: #06f1f6;
-  text-shadow: 1px 1px 7px;
+  width: 600px;
+  color: #fcdee0;
+  /* text-shadow: 1px 1px 7px; */
   border-radius: 15px;
-  border: 2px solid silver;
-  box-shadow: 0 0 5px 25px;
+  /* border: 2px solid #fcdee0; */
+  /* box-shadow: 0 0 5px 25px; */
 }
 
 .clock section {
@@ -34,15 +35,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 80px;
   padding: 1rem;
+  margin: 0 16px;
+  background-color: #f05969;
 }
 
 .clock section p {
   font-size: 4rem;
+  color: #fff;
+  text-shadow: none;
 }
 
 .clock section small {
-  color: silver;
+  color: #fff;
   text-shadow: none;
 }
 
