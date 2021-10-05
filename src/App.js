@@ -1,6 +1,8 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Clock from './components/Clock';
+import Game from './components/Game';
+import Cursor from './components/Cursor';
 
 function App() {
 const [timerDays, setTimerDays] = useState();
@@ -47,7 +49,9 @@ useEffect(() => {
 
   return (
     <div className="App">
+    <Cursor />
     <Clock timerDays={timerDays} timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} />
+    <Game />
     </div>
   );
 }

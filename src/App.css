@@ -2,16 +2,17 @@
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  cursor: none;
 }
 
 .App {
   text-align: center;
-  height: 100vh;
   background-color: #282c34;
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 .timer-container {
@@ -68,37 +69,97 @@ h3 {
   text-shadow: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  font-family: 'Roboto', sans-serif;
+ background-color: transparent;
+ border: none;
+ font-size: 24px;
+ font-weight: bold;
+ width: 100%;
+ text-align: center;
+ margin-top: 30px;
+ color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:hover {
+  color: red;
+  transition: 0.3s ease-in;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.score {
+  background: rgba(255,255,255,0.2);
+  padding: 0 3rem;
+  line-height: 1;
+  border-radius: 1rem;
+}
+
+.game {
+  width: 600px;
+  height: 400px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  cursor: none;
 }
 
-.App-link {
-  color: #61dafb;
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hole:after {
+  display: block;
+  background: url('./assets/snow2.svg') bottom center no-repeat;
+  background-size: contain;
+  content: '';
+  width: 100%;
+  height:90px;
+  position: absolute;
+  z-index: 5;
+  bottom: -70px;
+  overflow: visible;
+}
+
+.mole {
+  background: url('./assets/mole.svg') bottom center no-repeat;
+  background-size: 60%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition:all 0.4s;
+}
+
+.hole.up .mole {
+  top: 0;
+}
+
+.cursor {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #121212;
+  background-color: white;
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 9;
+  transition: all 200ms ease;
+  transition-property: opacity, background-image, transform, mix-blend-mode;
+}
+
+.cursor--hidden {
+  opacity: 0;
+}
+
+.cursor--link-hovered {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+.cursor--clicked {
+  transform: translate(-50%, -50%) scale(0.9);
+  background-image: url(./assets/snow-splash.svg);
 }
