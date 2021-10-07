@@ -3,8 +3,8 @@ import React, {Fragment} from 'react';
 const Clock = ({ timerDays, timerHours, timerMinutes, timerSeconds }) => {
   return <Fragment>
     <section className="timer-container">
-    <h1>FF Xmas Adventure</h1>
-    <h3>starts in</h3>
+    {/* <h1>FF Xmas Adventure</h1>
+    <h3>starts in</h3> */}
       <section className="timer">
         <div className="clock">
           <section>
@@ -28,6 +28,7 @@ const Clock = ({ timerDays, timerHours, timerMinutes, timerSeconds }) => {
           </section>
         </div>
       </section>
+      <h3>until FF Xmas celebration</h3>
     </section>
   </Fragment>
 }

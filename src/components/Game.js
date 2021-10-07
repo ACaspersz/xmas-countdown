@@ -53,7 +53,7 @@ const Game = () => {
 
   moles.forEach(mole => mole.addEventListener('click', bonk));
   return (
-    <div>
+    <div class="game-container">
       <div class="score-start">
         <h3>Score: <span class="score">0</span></h3>
     <button onClick={startGame}>Start!</button>
