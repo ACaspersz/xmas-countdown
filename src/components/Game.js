@@ -5,7 +5,7 @@ import splat from '../assets/splat.wav';
 const Game = () => {
   const holes = document.querySelectorAll('.hole');
   const scoreBoard = document.querySelector('.score');
-  const moles = document.querySelectorAll('.mole');
+  const elfs = document.querySelectorAll('.elf');
   let lastHole;
   let timeUp = false;
   let score = 0;
@@ -37,7 +37,7 @@ const Game = () => {
   }
 
   function startGame() {
-    scoreBoard.textContent = 0;
+    scoreBoard.innerHTML = 0;
     timeUp = false;
     score = 0;
     peep();
@@ -51,7 +51,7 @@ const Game = () => {
     scoreBoard.textContent = score;
   }
 
-  moles.forEach(mole => mole.addEventListener('click', bonk));
+  elfs.forEach(elf => elf.addEventListener('click', bonk));
   return (
     <div class="game-container">
       <div class="score-start">
@@ -60,22 +60,22 @@ const Game = () => {
       </div>
       <div class="game">
         <div class="hole hole1">
-          <div class="mole" onClick={play}></div>
+          <div class="elf" onClick={play}></div>
         </div>
         <div class="hole hole2">
-          <div class="mole" onClick={play}></div>
+          <div class="elf" onClick={play}></div>
         </div>
     <div class="hole hole3">
-      <div class="mole" onClick={play}></div>
+      <div class="elf" onClick={play}></div>
     </div>
     <div class="hole hole4">
-      <div class="mole" onClick={play}></div>
+      <div class="elf" onClick={play}></div>
     </div>
     <div class="hole hole5">
-      <div class="mole" onClick={play}></div>
+      <div class="elf" onClick={play}></div>
     </div>
     <div class="hole hole6">
-      <div class="mole" onClick={play}></div>
+      <div class="elf" onClick={play}></div>
     </div>
   </div>
     </div>

@@ -102,9 +102,9 @@
           bottom: -70px;
           overflow: visible;
         }
-        .mole {
-          background: url('./assets/mole.svg') bottom center no-repeat;
-          background-size: 60%;
+        .elf {
+          background: url('./assets/elf.png') bottom center no-repeat;
+          background-size: 80%;
           position: absolute;
           top: 100%;
           width: 100%;
@@ -112,7 +112,7 @@
           transition:all 0.4s;
         }
         &.up {
-          .mole {
+          .elf {
             top: 0;
           }
         }
