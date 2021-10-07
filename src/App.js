@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Clock from './components/Clock';
 import Game from './components/Game';
 import Cursor from './components/Cursor';
+import SnowStorm from 'react-snowstorm';
 
 function App() {
 const [timerDays, setTimerDays] = useState();
@@ -49,6 +50,7 @@ useEffect(() => {
 
   return (
     <div className="App">
+    <SnowStorm followMouse={false} flakesMax={150}/>
     <Cursor />
     <Game />
     <Clock timerDays={timerDays} timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} />
