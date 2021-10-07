@@ -50,8 +50,8 @@ useEffect(() => {
   return (
     <div className="App">
     <Cursor />
-    <Clock timerDays={timerDays} timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} />
     <Game />
+    <Clock timerDays={timerDays} timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} />
     </div>
   );
 }

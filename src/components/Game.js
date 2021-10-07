@@ -54,16 +54,17 @@ const Game = () => {
   moles.forEach(mole => mole.addEventListener('click', bonk));
   return (
     <div>
-      <h3>Score: <span class="score">0</span></h3>
-  <button onClick={startGame}>Start!</button>
-
-  <div class="game">
-    <div class="hole hole1">
-      <div class="mole" onClick={play}></div>
-    </div>
-    <div class="hole hole2">
-      <div class="mole" onClick={play}></div>
-    </div>
+      <div class="score-start">
+        <h3>Score: <span class="score">0</span></h3>
+    <button onClick={startGame}>Start!</button>
+      </div>
+      <div class="game">
+        <div class="hole hole1">
+          <div class="mole" onClick={play}></div>
+        </div>
+        <div class="hole hole2">
+          <div class="mole" onClick={play}></div>
+        </div>
     <div class="hole hole3">
       <div class="mole" onClick={play}></div>
     </div>
