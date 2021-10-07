@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useSound from 'use-sound';
 import splat from '../assets/splat.wav';
 
@@ -9,7 +9,8 @@ const Game = () => {
   let lastHole;
   let timeUp = false;
   let score = 0;
-  const [play] = useSound(splat);
+
+  const [play] = useSound(splat, {volume: 0.05});
 
   function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -44,7 +45,7 @@ const Game = () => {
   }
 
   function bonk(e) {
-    if(!e.isTrusted) return; // cheater!
+    if(!e.isTrusted) return;
     score++;
     this.parentNode.classList.remove('up');
     scoreBoard.textContent = score;
