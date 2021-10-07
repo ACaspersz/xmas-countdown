@@ -13,6 +13,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  height: 100vh;
   .cursor {
     width: 40px;
     height: 40px;
@@ -40,59 +41,23 @@
     transform: translate(-50%, -50%) scale(0.9);
     background-image: url(./assets/snow-splash.svg);
   }
-  .timer-container {
-    margin-top: 40px;
-    h1 {
-      color: #fff;
-      font-size: 3rem;
-      font-weight: 800;
-    }
-    
-    h3 {
-      color: #fff;
-      font-size: 2rem;
-      margin: 0px;
-    }
-    .timer {
-      .clock {
-        position: relative;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 180px;
-        width: 600px;
-        color: #fcdee0;
-        border-radius: 15px;
-        section {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          min-width: 80px;
-          padding: 1rem;
-          margin: 0 16px;
-          background-color: #f05969;
-          p {
-            font-size: 4rem;
-            color: #fff;
-            text-shadow: none;
-          }
-          small {
-            color: #fff;
-            text-shadow: none;
-          }
-        }
-      }
-    }
-  }
   
   .game-container {
     .score-start {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      top: 24px;
+      left: 24px;
       h3 {
+        align-items: center;
+        justify-content: center;
+        color: white;
         .score {
           background: rgba(255,255,255,0.2);
-          padding: 0 3rem;
+          padding: 0 2rem;
           line-height: 1;
           border-radius: 1rem;
         }
@@ -103,10 +68,9 @@
        border: none;
        font-size: 24px;
        font-weight: bold;
-       width: 100%;
        text-align: center;
-       margin-top: 30px;
        color: white;
+       margin-top: 20px;
       }
       
       button:hover {
@@ -155,5 +119,53 @@
       }
     }
   }
+  .timer-container {
+    margin-top: 40px;
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    
+    h3 {
+      color: #fff;
+      font-size: 2rem;
+      margin: 0px;
+    }
+    .timer {
+      .clock {
+        position: relative;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 180px;
+        width: 600px;
+        color: #fcdee0;
+        border-radius: 15px;
+        section {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          min-width: 80px;
+          padding: 1rem;
+          margin: 0 16px;
+          background-color: #f05969;
+          p {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: none;
+          }
+          small {
+            color: #fff;
+            text-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  
+  
 }
 
