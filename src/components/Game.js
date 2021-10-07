@@ -1,6 +1,6 @@
 import React from 'react'
 import useSound from 'use-sound';
-import splat from '../assets/splat.wav';
+import uh from '../assets/uh.wav';
 
 const Game = () => {
   const holes = document.querySelectorAll('.hole');
@@ -10,7 +10,7 @@ const Game = () => {
   let timeUp = false;
   let score = 0;
 
-  const [play] = useSound(splat, {volume: 0.05});
+  const [play] = useSound(uh, {volume: 0.3});
 
   function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -45,10 +45,10 @@ const Game = () => {
   }
 
   function bonk(e) {
-    if(!e.isTrusted) return;
+    // if(!e.isTrusted) return;
     score++;
     this.parentNode.classList.remove('up');
-    scoreBoard.textContent = score;
+    scoreBoard.innerHTML = score;
   }
 
   elfs.forEach(elf => elf.addEventListener('click', bonk));
