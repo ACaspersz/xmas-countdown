@@ -99,7 +99,7 @@
         // border-color: #f05969;
         .front {
           color: black;
-          // transition: 0.3s ease-in;
+          transition: color 0.3s ease-in;
         }
       }
       .popUp {
@@ -191,17 +191,28 @@
     }
   }
   .timer-container {
-    margin-top: 40px;
+    margin: 40px 0;
     h1 {
       color: #fff;
       font-size: 3rem;
       font-weight: 800;
     }
     
-    h3 {
+    .subtitle {
       color: #fff;
       font-size: 2rem;
-      margin: 0px;
+      text-transform: uppercase;
+      background-image: linear-gradient(#45D1A6, #45D1A6);
+	    background-repeat: no-repeat;
+	    background-position: 0% 100%;
+	    background-size: 100% 2px;
+	    transition: background-size .5s, background-position .3s ease-in .5s;
+      &:hover {
+        color: black;
+        background-size: 100% 100%;
+	      background-position: 0% 0%;
+	      transition: background-position .5s, color 1.5s, background-size .3s ease-in .5s;
+      }
     }
     .timer {
       .clock {

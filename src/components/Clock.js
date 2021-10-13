@@ -28,7 +28,7 @@ const Clock = ({ timerDays, timerHours, timerMinutes, timerSeconds }) => {
           </section>
         </div>
       </section>
-      <h3>until FF Xmas celebration</h3>
+      <h3><span className="subtitle animated bounce">until FF Xmas adventure</span></h3>
     </section>
   </Fragment>
 }
