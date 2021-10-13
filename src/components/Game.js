@@ -45,7 +45,8 @@ const Game = () => {
     peep();
     setShowPopUp(false);
     setShowCountdown(true);
-    setTimeout(() => (timeUp = true && setShowPopUp(true) && setShowCountdown(false)), (timeOfGame * 1000));
+    // eslint-disable-next-line no-sequences
+    setTimeout(() => (timeUp = true, setShowPopUp(true), setShowCountdown(false)), (timeOfGame * 1000));
   };
 
   const bonk = (e) => {
