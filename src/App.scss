@@ -23,6 +23,19 @@
   height: 100vh;
   overflow: hidden;
   justify-content: center;
+  @media (max-width: 650px) {
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+    height:100vw;
+    width:100vh;
+    position:absolute;
+    top: -100vw;
+    left: 0;
+  }
+  @media (max-width: 600px) {
+    overflow-y: scroll;
+    overflow: auto;
+  }
   .cursor {
     width: 40px;
     height: 40px;
@@ -148,6 +161,29 @@
         position: absolute;
         bottom: -50px;
       }
+      @media (max-width: 820px) {
+        left: 8px;
+        .popUp {
+          right: 15px;
+          bottom: -80px;
+        }
+      }
+      @media (max-width: 770px) {
+        button {
+          .front {
+            padding: 5px;
+          }
+        }
+        h3 {
+          .score {
+            padding: 0;
+          }
+        }
+        .popUp {
+          font-size: 12px;
+          right: 0;
+        }
+      }
     }
     .game {
       width: 550px;
@@ -192,6 +228,9 @@
   }
   .timer-container {
     margin: 40px 0;
+    @media (max-width: 600px) {
+      display: none;
+    }
     h1 {
       color: #fff;
       font-size: 3rem;
