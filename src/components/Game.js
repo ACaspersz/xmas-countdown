@@ -12,6 +12,7 @@ const Game = () => {
   let timeUp = false;
   const [score, setScore] = React.useState(0);
   const [play] = useSound(uh, { volume: 0.3 });
+  const timeOfGame = 10; 
 
   const randomHole = (holes) => {
     const idx = Math.floor(Math.random() * holes.length);
@@ -24,7 +25,7 @@ const Game = () => {
   };
 
   const peep = () => {
-    const time = randomTime(350, 1100);
+    const time = randomTime(300, 1000);
     const hole = randomHole(holes);
     hole.classList.add("up");
     setTimeout(() => {
@@ -37,7 +38,7 @@ const Game = () => {
     timeUp = false;
     setScore(0);
     peep();
-    setTimeout(() => (timeUp = true), 10000);
+    setTimeout(() => (timeUp = true), (timeOfGame * 1000));
   };
 
   const bonk = (e) => {

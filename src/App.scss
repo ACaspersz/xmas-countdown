@@ -1,7 +1,14 @@
+@font-face {
+  font-family: "FFRegular";
+  src: local("FFRegular"),
+    url("./fonts/regular.otf") format("truetype");
+  font-weight: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'FFRegular', sans-serif;
   cursor: none;
 }
 
@@ -63,7 +70,6 @@
         }
       }
       button {
-        font-family: 'Roboto', sans-serif;
        background-color: transparent;
        border: none;
        font-size: 24px;

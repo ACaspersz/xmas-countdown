@@ -4,6 +4,7 @@ import Clock from './components/Clock';
 import Game from './components/Game';
 import Cursor from './components/Cursor';
 import SnowStorm from 'react-snowstorm';
+import './fonts/regular.otf';
 
 function App() {
 const [timerDays, setTimerDays] = useState();
