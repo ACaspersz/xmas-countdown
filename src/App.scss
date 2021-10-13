@@ -183,6 +183,7 @@
           font-size: 12px;
           right: 0;
           padding: 0;
+          bottom: -60px;
         }
       }
       @media (max-width: 400px) {
@@ -243,6 +244,9 @@
   .timer-container {
     margin: 40px 0;
     @media (max-width: 720px) {
+      display: none;
+    }
+    @media (max-height: 570px) {
       display: none;
     }
     h1 {
