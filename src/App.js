@@ -51,7 +51,7 @@ useEffect(() => {
 
   return (
     <div className="App">
-    <SnowStorm followMouse={false} flakesMax={150}/>
+    <SnowStorm followMouse={false} flakesMax={160} excludeMobile={false}/>
     <Cursor />
     <Game />
     <Clock timerDays={timerDays} timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} />
