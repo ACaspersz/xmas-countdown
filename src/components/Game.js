@@ -59,7 +59,7 @@ const Game = () => {
     <div className="game-container">
       <div className="score-start">
         <h3>
-          Score: <span class="score">{score}</span>
+          Score: <span className="score">{score}</span>
         </h3>
         <button onClick={startGame}>
         <span className="front">Start!</span></button>
