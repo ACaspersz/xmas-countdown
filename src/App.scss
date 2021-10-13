@@ -78,7 +78,7 @@
         color: white;
         .score {
           background: rgba(255,255,255,0.2);
-          padding: 0 2rem;
+          padding: 0 2rem 4px 2rem;
           line-height: 1;
           border-radius: 1rem;
         }
@@ -171,17 +171,31 @@
       @media (max-width: 770px) {
         button {
           .front {
-            padding: 5px;
+            padding: 5px 10px;
           }
         }
         h3 {
           .score {
-            padding: 0;
+            padding: 0 15px 5px 15px;
           }
         }
         .popUp {
           font-size: 12px;
           right: 0;
+          padding: 0;
+        }
+      }
+      @media (max-width: 400px) {
+        h3 {
+          font-size: 14px;
+          .score {
+            padding: 0 10px 5px 10px;
+          }
+        }
+        .popUp {
+          width: 80px;
+          left: 0;
+          bottom:-60px;
         }
       }
     }
