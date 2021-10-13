@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import GameTimer from "./GameTimer";
 import useSound from "use-sound";
 import uh from "../assets/uh.wav";
 
@@ -10,7 +11,9 @@ const Game = () => {
   const holes = document.querySelectorAll(".hole");
   let lastHole;
   let timeUp = false;
-  const [score, setScore] = React.useState(0);
+  const [score, setScore] = useState(0);
+  const [showPopUp, setShowPopUp] = useState(true);
+  const [showCountdown, setShowCountdown] = useState(false);
   const [play] = useSound(uh, { volume: 0.3 });
   const timeOfGame = 10; 
 
@@ -34,11 +37,15 @@ const Game = () => {
     }, time);
   };
 
+  const Pop = () => <div id="showMe" className="popUp animated bounce">Click here to throw some snowballs!</div>
+
   const startGame = () => {
     timeUp = false;
     setScore(0);
     peep();
-    setTimeout(() => (timeUp = true), (timeOfGame * 1000));
+    setShowPopUp(false);
+    setShowCountdown(true);
+    setTimeout(() => (timeUp = true, setShowPopUp(true), setShowCountdown(false)), (timeOfGame * 1000));
   };
 
   const bonk = (e) => {
@@ -53,7 +60,10 @@ const Game = () => {
         <h3>
           Score: <span class="score">{score}</span>
         </h3>
-        <button onClick={startGame}>Start!</button>
+        <button onClick={startGame}>
+        <span className="front">Start!</span></button>
+        {showPopUp ? <Pop/> : null}
+        {showCountdown ? <GameTimer seconds={timeOfGame}/> : null }
       </div>
       <div className="game">
         <div className="hole hole1">
