@@ -1,10 +1,10 @@
 
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 
 const GameTimer = ({seconds}) => {
   const [counter, setCounter] = React.useState(seconds);
 
-  // Third Attempts
+  // Third Attempt
   useEffect(() => {
     const timer =
       counter > 0 && setInterval(() => setCounter(counter - 1), 1000);

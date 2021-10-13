@@ -52,6 +52,7 @@ const Game = () => {
   const bonk = (e) => {
     setScore(score + 1);
     play();
+    // need to work out how to drop the elf down on bonk!
     // hole.classList.remove("up");
   };
 
