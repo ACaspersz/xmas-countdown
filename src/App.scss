@@ -51,6 +51,55 @@
   }
   
   .game-container {
+    .end {
+      position: absolute;
+      width: 100%;
+      height: 30%;
+      .text {
+        background-color: #45D1A6;
+        width: 300px;
+        font-size: 2rem;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 100px;
+        z-index: 8;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 0 0 0 rgb(120, 119, 119);
+	      transform: scale(1);
+        opacity: 1;
+	      &.animated {
+          -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+          -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+          -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          -webkit-animation-iteration-count: infinite;
+        }
+        @-webkit-keyframes bounce {
+          0%, 100% {
+            -webkit-transform: translateY(0);
+          }
+          50% {
+            -webkit-transform: translateY(-5px);
+          }
+        }
+        @keyframes bounce {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+        &.bounce {
+          -webkit-animation-name: bounce;
+          animation-name: bounce;
+        }
+      }
+    }
     .score-start {
       display: flex;
       flex-direction: column;
@@ -193,6 +242,14 @@
       margin: 0 auto;
       padding-bottom: 0px;
       cursor: none;
+      .end {
+        position: absolute;
+        background-color: #45D1A6;
+        padding: 10px;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+      }
       .hole {
         flex: 1 0 33.33%;
         overflow: hidden;

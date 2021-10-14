@@ -1,8 +1,8 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const GameTimer = ({seconds}) => {
-  const [counter, setCounter] = React.useState(seconds);
+  const [counter, setCounter] = useState(seconds);
 
   // Third Attempt
   useEffect(() => {

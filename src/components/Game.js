@@ -14,6 +14,7 @@ const Game = () => {
   const [score, setScore] = useState(0);
   const [showPopUp, setShowPopUp] = useState(true);
   const [showCountdown, setShowCountdown] = useState(false);
+  const [showEndGame, setShowEndGame] = useState(false)
   const [play] = useSound(uh, { volume: 0.3 });
   const timeOfGame = 10; 
 
@@ -39,14 +40,24 @@ const Game = () => {
 
   const Pop = () => <div id="showMe" className="popUp animated bounce">Click here to throw some snowballs!</div>
 
+  const EndGame = () => 
+  <div class="end">
+    <div className="text animated bounce">
+      <span >Game Over!</span>
+      <p>Your score was {score} points!</p>
+    </div>
+  </div>
+
+
   const startGame = () => {
     timeUp = false;
     setScore(0);
     peep();
     setShowPopUp(false);
     setShowCountdown(true);
+    setShowEndGame(false);
     // eslint-disable-next-line no-sequences
-    setTimeout(() => (timeUp = true, setShowPopUp(true), setShowCountdown(false)), (timeOfGame * 1000));
+    setTimeout(() => (timeUp = true, setShowPopUp(true), setShowCountdown(false), setShowEndGame(true)), (timeOfGame * 1000));
   };
 
   const bonk = (e) => {
@@ -58,13 +69,14 @@ const Game = () => {
 
   return (
     <div className="game-container">
+    {showEndGame ? <EndGame /> : null}
       <div className="score-start">
         <h3>
           Score: <span className="score">{score}</span>
         </h3>
         <button onClick={startGame}>
         <span className="front">Start!</span></button>
-        {showPopUp ? <Pop/> : null}
+        {showPopUp && showEndGame === false ? <Pop/> : null}
         {showCountdown ? <GameTimer seconds={timeOfGame}/> : null }
       </div>
       <div className="game">
