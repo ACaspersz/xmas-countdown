@@ -44,7 +44,7 @@ const Game = () => {
   <div class="end">
     <div className="text animated bounce">
       <span >Game Over!</span>
-      <p>Your score was {score} points!</p>
+      <p>You got a score of {score}.</p>
     </div>
   </div>
 
