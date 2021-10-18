@@ -74,8 +74,10 @@ const Game = () => {
         <h3>
           Score: <span className="score">{score}</span>
         </h3>
-        {showPopUp ? <button onClick={startGame}>
-        <span className="front">Start!</span></button> : null }
+        {showPopUp ? 
+        <button onClick={startGame}>
+          <span className="front">Start!</span>
+        </button> : null }
         {showPopUp && showEndGame === false ? <Pop/> : null}
         {showCountdown ? <GameTimer seconds={timeOfGame}/> : null }
       </div>
