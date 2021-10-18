@@ -2,7 +2,6 @@ import './App.scss';
 import React, { useState, useEffect } from 'react';
 import Clock from './components/Clock';
 import Game from './components/Game';
-import Cursor from './components/Cursor';
 import SnowStorm from 'react-snowstorm';
 import './fonts/regular.otf';
 
@@ -52,7 +51,6 @@ useEffect(() => {
   return (
     <div className="App">
     <SnowStorm followMouse={false} flakesMax={160} excludeMobile={false}/>
-    <Cursor />
     <Game />
     <Clock timerDays={timerDays} timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} />
     </div>

@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   font-family: 'FFRegular', sans-serif;
-  cursor: none;
+  // cursor: none;
 }
 
 .App {
@@ -245,7 +245,7 @@
       flex-wrap: wrap;
       margin: 0 auto;
       padding-bottom: 0px;
-      cursor: none;
+      // cursor: none;
       .hole {
         flex: 1 0 33.33%;
         overflow: hidden;
