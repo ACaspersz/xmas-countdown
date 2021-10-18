@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import useMousePosition from "../../hooks/useMousePosition";
 import { MouseContext } from "../../context/mouse-context";
 
-const DotRing = () => {
+const SnowBall = () => {
     // 1.
   const { cursorType } = useContext(MouseContext);
 
@@ -18,4 +18,4 @@ const DotRing = () => {
   );
 };
 
-export default DotRing;
+export default SnowBall;
