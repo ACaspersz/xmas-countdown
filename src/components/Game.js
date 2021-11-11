@@ -14,7 +14,7 @@ const Game = () => {
   const [score, setScore] = useState(0);
   const [showPopUp, setShowPopUp] = useState(true);
   const [showCountdown, setShowCountdown] = useState(false);
-  const [showEndGame, setShowEndGame] = useState(false)
+  const [showEndGame, setShowEndGame] = useState(false);
   const [play] = useSound(uh, { volume: 0.3 });
   const timeOfGame = 10; 
 
@@ -66,6 +66,7 @@ const Game = () => {
     // need to work out how to drop the elf down on bonk!
     // hole.classList.remove("up");
   };
+
 
   return (
     <div className="game-container">

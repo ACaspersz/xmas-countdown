@@ -4,6 +4,8 @@ import Snowball from './components/Snowball/Snowball';
 import Clock from './components/Clock';
 import Game from './components/Game';
 import SnowStorm from 'react-snowstorm';
+// import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
 import './fonts/regular.otf';
 
 function App() {
@@ -11,16 +13,21 @@ const [timerDays, setTimerDays] = useState();
 const [timerHours, setTimerHours] = useState();
 const [timerMinutes, setTimerMinutes] = useState();
 const [timerSeconds, setTimerSeconds] = useState();
+const [finishTimer, setFinishTimer] = useState(false);
 // const { cursorChangeHandler } = useContext(MouseContext);
+const width = window.innerWidth;
+const height = window.innerHeight;
 
 let interval;
+
+
+
 
 const startTimer = () => {
   const countDownDate = new Date("2021-12-02 16:00:00").getTime();
 
   interval=setInterval(() => {
     const now = new Date().getTime();
-
     const distance = countDownDate - now;
 
     const days= Math.floor(distance/(24 * 60 * 60 * 1000));
@@ -36,6 +43,7 @@ const startTimer = () => {
     if (distance<0) {
       // Stop timer
       clearInterval(interval.current);
+      setFinishTimer(true);
     } else {
       // Update timer
       setTimerDays(days);
@@ -53,7 +61,10 @@ useEffect(() => {
   return (
     <div className="App">
     <Snowball />
-    <SnowStorm followMouse={false} flakesMax={160} excludeMobile={false}/>
+    {finishTimer ? 
+   <Confetti width={width} height={height} 
+   />  : 
+     <SnowStorm followMouse={false} flakesMax={160} excludeMobile={false}/>}
     <Game />
     <Clock timerDays={timerDays} timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} />
     </div>
