@@ -67,6 +67,7 @@ useEffect(() => {
      <SnowStorm followMouse={false} flakesMax={160} excludeMobile={false}/>}
     <Game />
     <Clock timerDays={timerDays} timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} />
+    {finishTimer ? <div><iframe title="gif" className="gif" src="https://giphy.com/embed/etOX3h7ApZuDe7Fc5w" width="299" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dancing-kermit-etOX3h7ApZuDe7Fc5w">via GIPHY</a></p></div> : ''}
     </div>
   );
 }
