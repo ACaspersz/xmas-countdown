@@ -26,7 +26,7 @@ const Clock = ({ timerDays, timerHours, timerMinutes, timerSeconds }) => {
           </section>
         </div>
       </section>
-      <h3><span className="subtitle animated bounce">until FF Xmas adventure</span></h3>
+      { timerDays === 0 && timerHours === 0 ? <h3 ><span className="subtitle animated bounce">hope your christmas dreams come true ❤️</span></h3> : <h3><span className="subtitle animated bounce">until FF Xmas adventure</span></h3>}
     </section>
   </Fragment>
 }
