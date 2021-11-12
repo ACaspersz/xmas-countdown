@@ -372,9 +372,21 @@
         }
       }
     }
-    .gif {
+    .kermit-wrapper {
       display: flex;
-      justify-content: left;
+      width: 100%;
+      position: absolute;
+      justify-content: space-between;
+      top: 190px;
+      // left: -60px;
+      cursor: none;
+      padding: 0;
+      margin: 0;
+      @media (max-width:1000px) {
+        .kermit-right {
+          display: none;
+        }
+      }
     }
   }
 
