@@ -1,5 +1,7 @@
 import './App.scss';
 import React, { useState, useEffect } from 'react';
+import Sound from 'react-sound';
+import Mariah from './assets/mariah.mp3'
 import Snowball from './components/Snowball/Snowball';
 import Clock from './components/Clock';
 import Game from './components/Game';
@@ -24,7 +26,7 @@ let interval;
 
 
 const startTimer = () => {
-  const countDownDate = new Date("2021-12-02 16:00:00").getTime();
+  const countDownDate = new Date("2021-11-11 16:00:00").getTime();
 
   interval=setInterval(() => {
     const now = new Date().getTime();
@@ -65,6 +67,13 @@ useEffect(() => {
    <Confetti width={width} height={height} 
    />  : 
      <SnowStorm followMouse={false} flakesMax={160} excludeMobile={false}/>}
+    {finishTimer ? <Sound 
+      url={Mariah}
+      playStatus={Sound.status.PLAYING}
+      playFromPosition={300}
+      loop={true}
+      volume={30}
+    /> : ''}
     <Game />
     <Clock timerDays={timerDays} timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} />
     </div>
