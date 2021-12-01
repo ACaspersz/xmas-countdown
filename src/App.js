@@ -26,7 +26,7 @@ let interval;
 
 
 const startTimer = () => {
-  const countDownDate = new Date("2021-12-02 16:00:00").getTime();
+  const countDownDate = new Date("2021-12-02 14:00:00").getTime();
 
   interval=setInterval(() => {
     const now = new Date().getTime();
